@@ -628,7 +628,7 @@ class Tek371:
             writer.writerow(["Voltage (V)", "Current (A)"])
             writer.writerows(points)
 
-        print(f"Curve saved to {filename}")
+        print(f"  Curve saved to {filename}")
 
     def read_preamble(self) -> str:
         return self.query(cmd.WFM_QUERY)
