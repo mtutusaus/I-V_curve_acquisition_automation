@@ -14,7 +14,7 @@ smu_source_voltage = 15 # in V
 smu_compliance_current = 1e-3 # in A
 
 # Device under test constants
-DUT = "IGBT_dev1"
+DUT = "IGBT"
 number_of_curves = 10
 folder = "Data/"
 
