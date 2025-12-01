@@ -8,7 +8,7 @@ tek371_horizontal_scale = 200e-3 # in V/DIV
 tek371_vertical_scale = 5 # in A/DIV
 tek371_vce_percentage = 100.0 # in %
 
-# Keitlhey2400 constants
+# Keithley2400 constants
 smu_gpib_address = "GPIB::25"
 smu_source_voltage = 15 # in V
 smu_compliance_current = 1e-3 # in A
