@@ -9,7 +9,7 @@ tek371_vertical_scale = 5 # in A/DIV
 tek371_vce_percentage = 100.0 # in %
 
 # Keithley2400 constants
-smu_gpib_address = "GPIB::25"
+smu_gpib_address = "GPIB::24"
 smu_source_voltage = 15 # in V
 smu_compliance_current = 1e-3 # in A
 
@@ -73,6 +73,7 @@ def main():
         tek.enable_srq_event()
 
     smu.disable_source()
+    smu.beep(4000, 2)
     tek.disable_srq_event()
     tek.close()
     print("Done")
