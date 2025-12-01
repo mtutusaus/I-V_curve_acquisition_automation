@@ -34,7 +34,6 @@ See the [LICENSE](LICENSE) file for the full license text.
 
 ## Acknowledgments
 
-- I would like to acknowledge **[David](https://github.com/sansanda/pymeasure/blob/dev/tek371A/pymeasure/instruments/tektronix/tek371A.py)** for the original implementation that served as the foundation for this project.
 - M365 Copilot (Microsoft) for development assistance
 
 ## Author
