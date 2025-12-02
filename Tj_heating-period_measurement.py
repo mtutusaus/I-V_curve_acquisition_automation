@@ -31,10 +31,10 @@ measurement_duration = 15 * 60  # Total duration in seconds (15 minutes)
 interval = 1  # Desired interval between measurements in seconds
 
 # File variables
+folder = "E:/Miquel_Tutu/H40ER5S/H40ER5S_dev10_2025-12-01/temp_log"
 prefix = "temp_log"
-temperature_filename = "70"
-extension = "txt"
-filename = f"{prefix}_{temperature_filename}.{extension}"
+temperature_filename = "100C"
+filename = f"{folder}/{prefix}_{temperature_filename}.txt"
 
 # Initialize, reset and config VCE SMU
 smu_vce = Keithley2400(vce_gpib_address)

@@ -24,7 +24,7 @@ folder = "E:/Miquel_Tutu/H40ER5S/H40ER5S_dev10_2025-12-01"
 DUT = "H40ER5S"
 dev = "dev10"
 vge_applied = "20"
-temperature_applied = "60"
+temperature_applied = "100"
 file = f"{DUT}_{dev}_{vge_applied}V_{temperature_applied}C"
 number_of_curves = 10
 
@@ -59,9 +59,10 @@ def main():
     print("-" * 50)
     tek.initialize()
     tek.set_peak_power(300)
+    # Step generator is not used, set to minimum
     tek.set_step_number(0)
-    tek.set_step_voltage(5)
-    tek.set_step_offset(4)
+    tek.set_step_voltage(200e-3)
+    tek.set_step_offset(0)
     tek.enable_srq_event()
     tek.set_horizontal("COL", tek371_horizontal_scale)  # 200 mV/div
     tek.set_vertical(tek371_vertical_scale)  # 5 A/div
