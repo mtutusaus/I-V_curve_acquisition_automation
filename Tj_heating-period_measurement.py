@@ -33,7 +33,7 @@ interval = 1  # Desired interval between measurements in seconds
 # File variables
 folder = "E:/Miquel_Tutu/H40ER5S/H40ER5S_dev10_2025-12-01/temp_log"
 prefix = "temp_log"
-temperature_filename = "100C"
+temperature_filename = "100"
 filename = f"{folder}/{prefix}_{temperature_filename}.txt"
 
 # Initialize, reset and config VCE SMU
