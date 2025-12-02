@@ -21,8 +21,13 @@ smu_compliance_current = 1e-3  # in A
 
 # Device under test constants
 folder = "E:/Miquel_Tutu/H40ER5S/H40ER5S_dev10_2025-12-01"
-DUT = "H40ER5S_dev10_20V_30C"
+DUT = "H40ER5S"
+dev = "dev10"
+vge_applied = "20"
+temperature_applied = "60"
+file = f"{DUT}_{dev}_{vge_applied}V_{temperature_applied}C"
 number_of_curves = 10
+
 
 def main():
 
@@ -86,7 +91,7 @@ def main():
             raise TimeoutError(f"  Sweep {i}/{number_of_curves} did not complete within timeout")
 
         # Read curve and save to CSV
-        filename = f"{folder}/{DUT}_{i}.csv"
+        filename = f"{folder}/{file}_{i}.csv"
         tek.read_curve(filename)
         print("-" * 50)
 
