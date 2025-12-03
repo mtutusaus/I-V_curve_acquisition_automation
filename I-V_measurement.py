@@ -31,7 +31,7 @@ file = f"{DUT}_{dev}_{vge_applied}V_{temperature_applied}C"
 number_of_curves = 10
 
 
-def compute_mean_file(folder_path: str, base_name: str, N: int) -> str:
+def compute_mean_file(folder_path: str, base_name: str, N: int):
     """
     Compute per-row mean of Voltage and Current across N files:
     {folder}/{base_name}_1.csv ... {folder}/{base_name}_{N}.csv
@@ -49,14 +49,14 @@ def compute_mean_file(folder_path: str, base_name: str, N: int) -> str:
     # Compute means (skip header)
     header = rows_list[0][0]
     num_rows = len(rows_list[0])  # should be 257
-    mean_rows = [header]
+    mean_rows = [header]  # Set first row of mean CSV file to have the same header
 
     for r in range(1, num_rows):
-        values_v = [float(rows_list[i][r][0]) for i in range(N)]
-        values_i = [float(rows_list[i][r][1]) for i in range(N)]
+        values_v = [float(rows_list[i][r][0]) for i in range(N)]  # Voltage values across all files
+        values_i = [float(rows_list[i][r][1]) for i in range(N)]  # Current values across all files
         mean_v = sum(values_v) / N
         mean_i = sum(values_i) / N
-        mean_rows.append([mean_v, mean_i])  # raw floats for MATLAB compatibility
+        mean_rows.append([mean_v, mean_i])
 
     # Save mean file
     out_path = os.path.join(folder_path, f"{base_name}_MEAN.csv")
@@ -65,11 +65,10 @@ def compute_mean_file(folder_path: str, base_name: str, N: int) -> str:
         writer.writerows(mean_rows)
 
     print(f"Mean file written: {out_path}")
-    return out_path
 
 
 def main():
-
+    # Scan GPIB bus for all connected devices (useful to be sure the PC is connected to the right bus...)
     rm = pyvisa.ResourceManager()
     resources = rm.list_resources()
     print("GPIB SCAN")
@@ -77,10 +76,11 @@ def main():
         if "GPIB" in r:
             print("  ", r)
 
-    # Initialize, reset and config SMU
-    smu = Keithley2400(smu_gpib_address)
     print("-" * 50)
     print("CONNECTED DEVICES")
+
+    # Initialize, reset and config SMU
+    smu = Keithley2400(smu_gpib_address)
     print(f"SMU connected at address {smu_gpib_address.split('::')[1]}: {smu.id}")
     smu.reset()
     # SMU is only applying voltage, not measuring, so no need for SRQ
