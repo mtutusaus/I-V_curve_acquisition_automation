@@ -55,3 +55,8 @@ smu_vce.beep(4000, 2)
 # First disable IC and then VGE
 smu_vce.disable_source()
 smu_vge.disable_source()
+# Clear status and SRQ to end measurement
+smu_vce.write("*CLS")
+smu_vce.write("*SRE 0")
+smu_vge.write("*CLS")
+smu_vge.write("*SRE 0")

@@ -33,7 +33,7 @@ interval = 1  # Desired interval between measurements in seconds
 # File variables
 folder = "E:/Miquel_Tutu/H40ER5S/H40ER5S_dev10_2025-12-01/temp_log"
 prefix = "temp_log"
-temperature_filename = "100"
+temperature_filename = "130"
 filename = f"{folder}/{prefix}_{temperature_filename}.txt"
 
 # Initialize, reset and config VCE SMU
@@ -103,3 +103,8 @@ finally:
     # First disable IC and then VGE
     smu_vce.disable_source()
     smu_vge.disable_source()
+    # Clear status and SRQ to end measurement
+    smu_vce.write("*CLS")
+    smu_vce.write("*SRE 0")
+    smu_vge.write("*CLS")
+    smu_vge.write("*SRE 0")
