@@ -58,8 +58,12 @@ def compute_mean_file(folder_path: str, base_name: str, N: int):
         mean_i = sum(values_i) / N
         mean_rows.append([mean_v, mean_i])
 
-    # Save mean file
-    out_path = os.path.join(folder_path, f"{base_name}_MEAN.csv")
+    # Create 'mean' subfolder if it doesn't exist
+    mean_folder = os.path.join(folder_path, "mean")
+    os.makedirs(mean_folder, exist_ok=True)
+
+    # Save mean file in the subfolder
+    out_path = os.path.join(mean_folder, f"{base_name}_MEAN.csv")
     with open(out_path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerows(mean_rows)
