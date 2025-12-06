@@ -25,6 +25,12 @@ The scripts are intended to be used as follows:
 4. [`I-V single`](I-V_single.py): Performs any number of consecutive single measurements at specific conditions, saves all the curve files separately on the provided location. Computes the mean of all measurements and saves it into a separate folder within the same directory.
 
 ---
+## **Related Projects**
+
+This project is built on top of:
+- [tek371-driver](https://github.com/mtutusaus/tek371-driver) - Low-level Tektronix 371 communication driver
+
+---
 ## **Development**
 
 - This project is developed with AI assistance (M365 Copilot) for code suggestions, debugging, and optimization.
