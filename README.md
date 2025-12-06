@@ -27,7 +27,7 @@ The scripts are intended to be used as follows:
 ---
 ## **Development**
 
-- This project it is developed with AI assistance (M365 Copilot) for code suggestions, debugging, and optimization.
+- This project is developed with AI assistance (M365 Copilot) for code suggestions, debugging, and optimization.
 
 ---
 ## **License**
