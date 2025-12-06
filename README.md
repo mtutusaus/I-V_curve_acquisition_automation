@@ -7,7 +7,7 @@
 [![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## **Overview**
-This project automates the acquisition of experimental I-V curves of MOS gated power devices measured with a **Tektronix TEK371** high power curve tracer. The Gate-Source (Emitter) voltage is applied with a **Keitlhey 2400** SMU. The curve tracer is controlled using the [tek371](https://github.com/mtutusaus/tek371-driver) driver, and the SMU using its dedicated [PyMeasure](https://github.com/pymeasure/pymeasure) driver.
+This project automates the acquisition of I-V curves of MOS gated power devices measured with a **Tektronix TEK371** high power curve tracer. The Gate-Source (Emitter) voltage is applied with a **Keitlhey 2400** SMU. The curve tracer is controlled using the [tek371](https://github.com/mtutusaus/tek371-driver) driver, and the SMU using its dedicated [PyMeasure](https://github.com/pymeasure/pymeasure) driver.
 
 ---
 ## **Requirements**
